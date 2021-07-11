@@ -7,18 +7,18 @@ function GalleryList(props){
 
     return (
         <>
-        <section>
-            {props.galleryAlbum.map(
-                <GalleryItem
-                    key={item.id}
-                    id={item.id}
-                    path={item.path}
-                    description={item.description}
-                    loves={item.loves}
-                    addLove={props.addLove}
-                    />
-            )}
-        </section>
+            <section className="album-container">
+                {props.galleryAlbum.map(item =>
+                    <GalleryItem
+                        key={item.id}
+                        id={item.id}
+                        path={item.path}
+                        description={item.description}
+                        loves={item.loves}
+                        addLove={props.addLove}
+                        />
+                )}
+            </section>
         </>
     );
 }

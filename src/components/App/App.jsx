@@ -9,7 +9,13 @@ import GalleryList from '../GalleryList/GalleryList';
 
 function App() {
 
-  const [galleryList, setGalleryList] = useState ([]);
+  const [galleryAlbum, setGalleryAlbum] = useState ([]);
+
+  useEffect(() => {
+    getGallery();
+  }, []);
+
+
   const getGallery = () => {
     axios({
       method: 'GET',
@@ -17,20 +23,23 @@ function App() {
     })
     .then( response => {
       console.log('GET gallery', response.data);
-      setGalleryList(response.data);
+      setGalleryAlbum(response.data);
     })
     .catch( err => {
       console.log('Error during GET', err);
     });
   }
-    return (
+
+
+  
+  return (
       <div className="App">
           <Header />
           <main>
           <p>Gallery goes here</p>
             <img src="images/goat_small.jpg"/>
           <GalleryList 
-          galleryList={galleryList}
+          galleryAlbum={galleryAlbum}
           />
           </main>
       </div>
