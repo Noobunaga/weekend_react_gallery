@@ -3,8 +3,7 @@ import './GalleryItem.css';
 
 function GalleryItem({path, addLove}) {
     const [display, setDisplay] = useState(true);
-    console.log(path);
-    console.log(addLove);
+
 
     const togglePic = () => {
         setDisplay(!display);

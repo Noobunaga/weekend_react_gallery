@@ -49,8 +49,7 @@ function App() {
       <div className="App">
           <Header />
           <main>
-          <p>Gallery goes here</p>
-            {/* <img src="images/goat_small.jpg"/> */}
+          <p>Gallery</p>
           <GalleryList 
           galleryAlbum={galleryAlbum}
           addLove={addLove}

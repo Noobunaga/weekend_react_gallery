@@ -10,7 +10,7 @@ function GalleryList({galleryAlbum, addLove}){
                 {galleryAlbum.map(item =>
                     <GalleryItem
                         key={item.id}
-                        path={item.path}
+                        path={item}
                         addLove={addLove}
                         />
                 )}
