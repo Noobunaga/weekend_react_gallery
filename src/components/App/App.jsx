@@ -30,6 +30,19 @@ function App() {
     });
   }
 
+  const addLove = (picId) => {
+    axios({
+      method: 'PUT',
+      url: `/gallery/like/${picId}`,
+    })
+    .then(response => {
+      console.log('Love added to picId', picId);
+      getGallery();
+    })
+    .catch(error => {
+      console.log('Error loving', error);
+    });
+  }
 
   
   return (
@@ -40,6 +53,7 @@ function App() {
             <img src="images/goat_small.jpg"/>
           <GalleryList 
           galleryAlbum={galleryAlbum}
+          addLove={addLove}
           />
           </main>
       </div>
