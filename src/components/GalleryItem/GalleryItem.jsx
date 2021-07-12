@@ -9,9 +9,9 @@ function GalleryItem({path, addLove}) {
         setDisplay(!display);
     }
 
-    const clickLike = (event) =>{
-        addLike(image);
-    };
+    // const clickLike = (event) =>{
+    //     addLike(image);
+    // };
 
     return (
         <>
@@ -23,7 +23,7 @@ function GalleryItem({path, addLove}) {
                 <p className="photoDescription">{path.description}</p>}
             </section>
         </div>  
-        <button type button='button' onClick={() => addLove(item.id)}>Likes {item.likes} </button> 
+        <button type button='button' onClick={() => addLove(path.id)}>Likes {path.love} </button> 
         </>
     )
 }
