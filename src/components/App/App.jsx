@@ -36,7 +36,7 @@ function App() {
       url: `/gallery/like/${id}`,
     })
     .then(response => {
-      console.log('Love added to picId', id);
+      console.log('Love added to id', id);
       getGallery();
     })
     .catch(error => {

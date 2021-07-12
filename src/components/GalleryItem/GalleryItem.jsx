@@ -9,23 +9,32 @@ function GalleryItem({path, addLove}) {
         setDisplay(!display);
     }
 
+    const clickLike = (event) =>{
+        addLike(image);
+    };
+
     return (
+        <>
         <div className="container">
             <section onClick={() => togglePic(path.id)} className="galleryItem">
                 {display && 
                 <img className="photoItem" src={path.path} alt={path.description}></img>}
                 {!display &&
                 <p className="photoDescription">{path.description}</p>}
-            {/* {displayDescription ? <p className="pic-description" onCLick={togglePic}>{props.description}</p> : 
-            <img className="item-pic" onClick={togglePic} src={props.path} alt="art"/>}
-            <div>
-                <p className="love-counter">Loves: {props.love}</p>
-                <button className="love-counter-btn" onClick={() => props.addLove(props.id)}>LOVE IT! {props.love}</button> */}
-            {/* </div> */}
             </section>
-        </div>    
-    );
+        </div>  
+        <button type button='button' onClick={() => addLove(item.id)}>Likes {item.likes} </button> 
+        </>
+    )
 }
 
+{/* <div>
+    <button
+        className="like-button"
+        type="button"
+        onClick={() => addLove(item)}
+        >Love</button>
+        <p>Loves: {item.id}</p>
+</div> */}
 
 export default GalleryItem;
