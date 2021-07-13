@@ -24,7 +24,7 @@ function GalleryItem({item, addLove}) {
                 <p className="photoDescription">{item.description}</p>}
             </section>
         </div>  
-        <button type button='button' onClick={() => addLove(item.id)}>Likes {item.love} </button> 
+        <button type button='button' onClick={() => addLove(item.id)}>Likes {item.likes} </button> 
         </>
     )
 }
