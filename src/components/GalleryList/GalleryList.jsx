@@ -8,12 +8,12 @@ function GalleryList({galleryAlbum, addLove}){
         <>
             <div className="album-container">
                 {galleryAlbum.map(item =>
-                    <GalleryItem
+                    {return (<GalleryItem
                         key={item.id}
-                        path={item}
+                        item={item}
                         addLove={addLove}
-                        />
-                )}
+                        />)})
+                }
             </div>
         </>
     );

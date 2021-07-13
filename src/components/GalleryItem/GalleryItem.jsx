@@ -1,12 +1,13 @@
+import react from 'react';
 import { useState } from "react";
 import './GalleryItem.css';
 
-function GalleryItem({path, addLove}) {
+function GalleryItem({item, addLove}) {
     const [display, setDisplay] = useState(true);
 
 
     const togglePic = () => {
-        setDisplay(!display);
+        setDisplay(!display)
     }
 
     // const clickLike = (event) =>{
@@ -16,14 +17,14 @@ function GalleryItem({path, addLove}) {
     return (
         <>
         <div className="container">
-            <section onClick={() => togglePic(path.id)} className="galleryItem">
+            <section onClick={() => togglePic(item.id)} className="galleryItem">
                 {display && 
-                <img className="photoItem" src={path.path} alt={path.description}></img>}
+                <img className="photoItem" src={item.path} alt={item.description}/>}
                 {!display &&
-                <p className="photoDescription">{path.description}</p>}
+                <p className="photoDescription">{item.description}</p>}
             </section>
         </div>  
-        <button type button='button' onClick={() => addLove(path.id)}>Likes {path.love} </button> 
+        <button type button='button' onClick={() => addLove(item.id)}>Likes {item.love} </button> 
         </>
     )
 }
